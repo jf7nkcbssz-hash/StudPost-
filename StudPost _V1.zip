@@ -1,0 +1,33 @@
+#StudPost — V1
+
+Cette version est un **prototype front-end** qui fonctionne sur GitHub Pages avec `localStorage`.
+
+## Fichiers
+- `index.html` : site StudPost
+- `style.css` : design
+- `app.js` : comptes, publications, rubriques et likes du prototype
+- `admin.html` : espace administrateur
+- `admin.js` : gestion prototype
+- `README.md` : instructions
+
+## Mise en ligne
+1. Créer un repository GitHub public.
+2. Ajouter tous les fichiers.
+3. Dans Settings → Pages, choisir `Deploy from a branch`, branche `main`, dossier `/root`.
+4. Ouvrir l'URL GitHub Pages.
+
+## Important pour la vraie version
+Le prototype ne doit pas être utilisé pour de vrais utilisateurs : les données sont dans le navigateur et le mot de passe administrateur est visible dans le JavaScript.
+
+Pour une version réelle :
+- Supabase Auth pour les comptes et sessions.
+- Base PostgreSQL pour utilisateurs, rôles, codes et publications.
+- Supabase Storage pour photos/vidéos.
+- RLS pour empêcher un utilisateur de modifier les données d'un autre.
+- Fonction serveur/Edge Function pour générer les codes côté serveur.
+- Hashage et gestion sécurisée des mots de passe via le système d'authentification.
+- Intégration WhatsApp Business/API si l'envoi automatique de messages est souhaité.
+
+Le prototype limite les médias à 2 Mo car `localStorage` n'est pas adapté au stockage réel de photos/vidéos.
+
+Le système de likes est anonyme dans l'interface, mais cette V1 ne limite pas techniquement les abus de likes.
