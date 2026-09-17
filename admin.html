@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudPost — Administration</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{background:#eef1f6}.admin{max-width:1100px;margin:25px auto;padding:0 15px}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{padding:18px;background:#fff;border-radius:15px}
+    .stat b{display:block;font-size:28px}.search{display:flex;gap:8px}.search input{flex:1;padding:12px;border:1px solid #d7dce5;border-radius:10px}
+    .user-row{padding:15px 0;border-top:1px solid #e4e7ed}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+    .green{border:0;background:#14804a;color:#fff;padding:9px;border-radius:8px;font-weight:700}.blue{border:0;background:#1769ff;color:#fff;padding:9px;border-radius:8px;font-weight:700}
+    @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<header class="topbar"><div class="brand">StudPost Admin</div></header>
+<main class="admin">
+  <section id="login" class="card">
+    <h1>Administration</h1>
+    <p class="muted">Connexion sécurisée requise.</p>
+    <form id="adminLogin" class="form">
+      <input id="adminPassword" type="password" placeholder="Mot de passe administrateur" required>
+      <button class="primary">Accéder</button>
+    </form>
+    <div id="adminMsg" class="message"></div>
+  </section>
+
+  <section id="panel" class="hidden">
+    <div class="stats">
+      <div class="stat">Utilisateurs<b id="usersCount">0</b></div>
+      <div class="stat">Publications<b id="postsCount">0</b></div>
+      <div class="stat">Certifiés<b id="certCount">0</b></div>
+      <div class="stat">Business<b id="bizCount">0</b></div>
+    </div>
+
+    <section class="card">
+      <h2>Générer un code d'accès</h2>
+      <p class="muted">Code aléatoire unique de 7 chiffres.</p>
+      <button id="genAccess" class="blue">Générer</button>
+      <p id="accessResult"></p>
+    </section>
+
+    <section class="card">
+      <h2>Rechercher un compte</h2>
+      <div class="search"><input id="userSearch" placeholder="Nom du compte"><button id="searchBtn" class="primary">Rechercher</button></div>
+      <div id="results"></div>
+    </section>
+
+    <section class="card">
+      <h2>Générer un Code Poste</h2>
+      <p class="muted">Le code est associé à un compte et expire après 3 mois.</p>
+      <select id="codeUser"></select>
+      <button id="genPostCode" class="blue">Générer le Code Poste</button>
+      <p id="postCodeResult"></p>
+    </section>
+
+    <button id="adminLogout" class="danger">Déconnexion administrateur</button>
+  </section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+:root {
+    --primary: #f59e0b;
+    --bg: #0f172a;
+    --text: #e2e8f0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 32px 20px;
+}
+
+header h1 { font-size: 28px; margin-bottom: 8px; }
+
+button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #1a1a1a;
+    font-size: 16px;
+    font-weight: 600;
+}
